@@ -5,6 +5,8 @@
 
 package com.mycompany.theorchestrathingitself;
 
+import java.util.HashMap;
+
 /**
  *
  * @author atxbr
@@ -13,6 +15,8 @@ public class TheOrchestraThingItself {
 
     public static void main(String[] args) {
         System.out.println("meowmewomewoemwomewoarilusgr;oiherw;sdtogw'esdrthoi");
-        System.out.println();
+        HashMap<String, Instrument> orchestra;
+        int tempo;
     }
+    
 }
