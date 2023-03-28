@@ -13,5 +13,6 @@ public class TheOrchestraThingItself {
 
     public static void main(String[] args) {
         System.out.println("meowmewomewoemwomewoarilusgr;oiherw;sdtogw'esdrthoi");
+        System.out.println();
     }
 }
