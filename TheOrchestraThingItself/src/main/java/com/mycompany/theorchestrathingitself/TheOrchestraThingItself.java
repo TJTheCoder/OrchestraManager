@@ -12,11 +12,13 @@ import java.util.HashMap;
  * @author atxbr
  */
 public class TheOrchestraThingItself {
-
-    public static void main(String[] args) {
+    
+    private HashMap<String, Instrument> orchestra;
+    private int tempo;
+    
+    public void main(String[] args) {
         System.out.println("meowmewomewoemwomewoarilusgr;oiherw;sdtogw'esdrthoi");
-        HashMap<String, Instrument> orchestra;
-        int tempo;
+        
     }
     
 }
