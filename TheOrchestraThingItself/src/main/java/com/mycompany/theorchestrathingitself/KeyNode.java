@@ -18,5 +18,43 @@ public class KeyNode {
     int modifier;   //how a specific pitch is changed
     KeyNode left;   //lesser child for the KeyNode (based off index);]
     KeyNode right;  //greater child for the KeyNode (based off index)
-    
+
+    public KeyNode(int index, int modifier, KeyNode left, KeyNode right) {
+        this.index = index;
+        this.modifier = modifier;
+        this.left = left;
+        this.right = right;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public int getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(int modifier) {
+        this.modifier = modifier;
+    }
+
+    public KeyNode getLeft() {
+        return left;
+    }
+
+    public void setLeft(KeyNode left) {
+        this.left = left;
+    }
+
+    public KeyNode getRight() {
+        return right;
+    }
+
+    public void setRight(KeyNode right) {
+        this.right = right;
+    }
 }
