@@ -9,5 +9,14 @@ package com.mycompany.theorchestrathingitself;
  * @author atxbr
  */
 public class Instrument {
+    Measure measures[];
+    int signature;
     
+    
+    public Instrument(Measure[] mes, int sig){
+        measures = mes;
+        signature = sig;
+        
+    
+    }
 }
