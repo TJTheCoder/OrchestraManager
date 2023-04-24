@@ -67,6 +67,7 @@ public class GUI extends javax.swing.JFrame {
         pausePlay_button2 = new javax.swing.JButton();
         volume_slider = new javax.swing.JSlider();
         albumName_label = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,6 +206,7 @@ public class GUI extends javax.swing.JFrame {
         );
 
         tabs.addTab("Player", player_panel);
+        tabs.addTab("Composer", jTabbedPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -296,31 +298,16 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel albumCover;
-    private javax.swing.JLabel albumCover1;
-    private javax.swing.JLabel albumCover2;
-    private javax.swing.JLabel albumCover3;
-    private javax.swing.JLabel albumName;
-    private javax.swing.JLabel albumName1;
-    private javax.swing.JLabel albumName2;
     private javax.swing.JLabel albumName2_label;
-    private javax.swing.JLabel albumName3;
     private javax.swing.JLabel albumName_label;
     private javax.swing.JLabel coverShow2_label;
     private javax.swing.JLabel coverShow_label;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton pausePlay_button2;
     private java.awt.List playList_list;
     private javax.swing.JPanel player_panel;
-    private javax.swing.JProgressBar progressBar;
-    private javax.swing.JProgressBar progressBar1;
-    private javax.swing.JProgressBar progressBar2;
-    private javax.swing.JProgressBar progressBar3;
     private javax.swing.JSlider progressBar_slider;
     private javax.swing.JPanel shuffle_panel;
     private javax.swing.JButton skipBack_button;
