@@ -9,7 +9,8 @@ package com.mycompany.theorchestrathingitself;
  * @author atxbr
  */
 public class MediaPlayer {
-    
+
+    /*
     public Mediaplayer(){
         public play(){
             
@@ -30,4 +31,5 @@ public class MediaPlayer {
             
         }
     }
+    */
 }
