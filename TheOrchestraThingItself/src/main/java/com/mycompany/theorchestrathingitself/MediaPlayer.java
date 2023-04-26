@@ -12,9 +12,10 @@ import java.io.FileInputStream;
  * @author atxbr
  */
 public class MediaPlayer {
+    /*
     FileInputStream FIS;
     BufferedInputStream BIS;
     
     public Player player;
-    
+    */
 }
