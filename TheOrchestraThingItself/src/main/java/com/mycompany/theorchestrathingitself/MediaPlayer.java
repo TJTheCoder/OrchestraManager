@@ -4,17 +4,32 @@
  */
 package com.mycompany.theorchestrathingitself;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-
 /**
  *
  * @author atxbr
  */
 public class MediaPlayer {
-    FileInputStream FIS;
-    BufferedInputStream BIS;
-    
-    public Player player;
-    
+
+    /*
+    public Mediaplayer(){
+        public play(){
+            
+        }
+        public pause(){
+            
+        }
+        public skipFor(){
+            
+        }
+        public skipBack(){
+            
+        }
+        public next(){
+            
+        }
+        public back(){
+            
+        }
+    }
+    */
 }

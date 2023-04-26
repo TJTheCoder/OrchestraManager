@@ -3,39 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.theorchestrathingitself;
-import java.time.Duration;
+
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.print.attribute.standard.Media;
 import javax.swing.ImageIcon;
-import javax.swing.Timer;
-import javax.swing.event.ChangeListener;
 
 /**
  *
  * @author atxbr
  */
 public class GUI extends javax.swing.JFrame {
-    private File directory;
-    private File[] files;
-    private ArrayList<File> songs;
-    private int songNumber;
-    private int[] speeds = {25, 50, 75, 100, 125, 150, 175, 200};
-    private Timer timer;
-    private TimerTask task;
-    private boolean running;
-    private Media media;
-    private MediaPlayer mediaPlayer;
-    
+        private BufferedImage pause = ImageIO.read(new File("images\\pause.png"));
+        private BufferedImage play = ImageIO.read(new File("images\\play.png"));
     /**
      * Creates new form GUI
      * @throws java.io.IOException
@@ -43,24 +29,13 @@ public class GUI extends javax.swing.JFrame {
     public GUI() throws IOException {
         initComponents();
         
-        songs = new ArrayList<File>();
-        directory = new File("media");
-        files = directory.listFiles();
-        if (files != null){
-            for (File file : files){
-                songs.add(file);
-                System.out.println(file);
-            }
-        }
         
-        
-        BufferedImage pause = ImageIO.read(new File("images\\pause.png"));
-        BufferedImage play = ImageIO.read(new File("images\\play.png"));
         
         BufferedImage img = ImageIO.read(new File("images\\cover.png"));
         Image img1 = img.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
         coverShow_label.setIcon(new ImageIcon(img1));
         coverShow2_label.setIcon(new ImageIcon(img1));
+        
         
 //        Duration total = Media.getDuration();
 //        progressBar_slider.setMax(total.toSeconds);
@@ -253,33 +228,34 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void skipFor_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipFor_buttonActionPerformed
-        //MediaPlayer.back();
-        
-    }//GEN-LAST:event_skipFor_buttonActionPerformed
 
-    private void skipBack_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipBack_buttonActionPerformed
-        //MediaPlayer.next();
-    }//GEN-LAST:event_skipBack_buttonActionPerformed
-
-    private void pausePlay_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausePlay_button2ActionPerformed
         Image img2 = pause.getScaledInstance(48, 36, Image.SCALE_SMOOTH);
         Image img3 = play.getScaledInstance(48, 36, Image.SCALE_SMOOTH);
-        if (skipFor_button.getIcon().equals(img2)) {
+        if (skipFor_button.getIcon().equals(img2)){
             skipFor_button.setIcon(new ImageIcon(img3));
 //            MediaPlayer.pause();
-        } else {
+        }
+        else{
 //            MediaPlayer.play();
             skipFor_button.setIcon(new ImageIcon(img2));
         }
+    }//GEN-LAST:event_skipFor_buttonActionPerformed
+
+    private void skipBack_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipBack_buttonActionPerformed
+//        MediaPlayer.next();
+    }//GEN-LAST:event_skipBack_buttonActionPerformed
+
+    private void pausePlay_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausePlay_button2ActionPerformed
+//        MediaPlayer.back();
     }//GEN-LAST:event_pausePlay_button2ActionPerformed
 
     private void progressBar_sliderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_progressBar_sliderMouseDragged
-        MediaPlayer.seek(Duration.seconds(progressBar_slider.getValue()));
+//        MediaPlayer.seek(Duration.seconds(progressBar.getValue()));
         
     }//GEN-LAST:event_progressBar_sliderMouseDragged
 
     private void progressBar_sliderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_progressBar_sliderMousePressed
-        MediaPlayer.seek(Duration.seconds(progressBar_slider.getValue()));
+//        MediaPlayer.seek(Duration.seconds(progressBar.getValue()));
     }//GEN-LAST:event_progressBar_sliderMousePressed
 
     /**
