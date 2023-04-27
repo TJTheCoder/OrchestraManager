@@ -12,6 +12,11 @@ public class KeyNode {
         this.left = left;
         this.right = right;
     }
+
+    public KeyNode(int index, int modifier) {
+        this.index = index;
+        this.modifier = modifier;
+    }
     
     public int getIndex() {
         return index;
