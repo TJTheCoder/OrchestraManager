@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.theorchestrathingitself;
 
-/**
- *
- * @author atxbr
- */
+import java.util.ArrayList;
+
 public class Measure {
+    private KeyTree key;
+    private ArrayList<Note> notes;
+
+    public Measure(KeyTree key, ArrayList<Note> notes) {
+        this.key = key;
+        this.notes = notes;
+    }
+
+    // getters and setters for key and notes
+
+    public KeyTree getKey() {
+        return key;
+    }
+
+    public void setKey(KeyTree key) {
+        this.key = key;
+    }
+
+    public ArrayList<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(ArrayList<Note> notes) {
+        this.notes = notes;
+    }
     
 }

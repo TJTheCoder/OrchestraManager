@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.theorchestrathingitself;
 
-/**
- *
- * @author atxbr
- */
+import javax.sound.sampled.Clip;
+
 public class Note {
+    private Clip sound;
+    private int pitch;
+    private double percentLength;
     
+    public Note(Clip sound, int pitch, double percentLength) {
+        this.sound = sound;
+        this.pitch = pitch;
+        this.percentLength = percentLength;
+    }
+    
+    public Clip getSound() {
+        return sound;
+    }
+    
+    public int getPitch() {
+        return pitch;
+    }
+    
+    public double getPercentLength() {
+        return percentLength;
+    }
 }

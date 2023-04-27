@@ -1,22 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.theorchestrathingitself;
 
-/**
- *
- * @author atxbr
- */
 public class Instrument {
-    Measure measures[];
-    int signature;
+    private Measure[] measures;
+    private int signature;
     
+    public Instrument(Measure[] measures, int signature) {
+        this.measures = measures;
+        this.signature = signature;
+    }
     
-    public Instrument(Measure[] mes, int sig){
-        measures = mes;
-        signature = sig;
-        
+    public Measure[] getMeasures() {
+        return measures;
+    }
     
+    public int getSignature() {
+        return signature;
+    }
+    
+    public void setMeasures(Measure[] measures) {
+        this.measures = measures;
+    }
+    
+    public void setSignature(int signature) {
+        this.signature = signature;
     }
 }
