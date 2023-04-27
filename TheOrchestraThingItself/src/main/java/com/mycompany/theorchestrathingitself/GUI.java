@@ -67,7 +67,7 @@ public class GUI extends javax.swing.JFrame {
         pausePlay_button2 = new javax.swing.JButton();
         volume_slider = new javax.swing.JSlider();
         albumName_label = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,7 +206,7 @@ public class GUI extends javax.swing.JFrame {
         );
 
         tabs.addTab("Player", player_panel);
-        tabs.addTab("Composer", jTabbedPane1);
+        tabs.addTab("Composer", jTabbedPane2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -304,7 +304,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel coverShow_label;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JButton pausePlay_button2;
     private java.awt.List playList_list;
     private javax.swing.JPanel player_panel;
