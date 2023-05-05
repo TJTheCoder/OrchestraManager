@@ -1,70 +1,75 @@
 package com.mycompany.theorchestrathingitself;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Buttons extends JPanel {
 
-  private Rectangle clearButton;
-  private Rectangle playButton;
-  private boolean playClicked;
-  private Staff staff;
-  private Dot dot;
+    private static final int BUTTON_WIDTH = 80;
+    private static final int BUTTON_HEIGHT = 40;
+    private static final Color CLEAR_COLOR = Color.RED;
+    private static final Color PLAY_COLOR = Color.GREEN;
 
-  public Buttons(Staff staff, Dot dot) {
-    this.staff = staff;
-    this.dot = dot;
-    this.clearButton = new Rectangle(50, 20, 80, 40);
-    this.playButton = new Rectangle(150, 20, 80, 40);
-    this.playClicked = false;
+    private JButton clearButton;
+    private JButton playButton;
+    private Dot dot;
 
-    this.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
+    public Buttons(Dot dot) {
+        this.dot = dot;
+        setPreferredSize(new Dimension(dot.getWidth(), BUTTON_HEIGHT));
+        clearButton = createButton("Clear", CLEAR_COLOR);
+        playButton = createButton("Play", PLAY_COLOR);
+        add(clearButton);
+        add(playButton);
 
-        if (clearButton.contains(x, y)) {
-          dot.clearNotes();
-        } else if (playButton.contains(x, y)) {
-          playClicked = true;
-          repaint();
-        }
-      }
-    });
-  }
+        clearButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                dot.clearNotes();
+            }
+        });
 
-  @Override
-  protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
-
-    // Draw the buttons
-    g.setColor(Color.BLACK);
-    g.drawRect(clearButton.x, clearButton.y, clearButton.width, clearButton.height);
-    g.drawString("Clear", clearButton.x + 20, clearButton.y + 25);
-
-    g.drawRect(playButton.x, playButton.y, playButton.width, playButton.height);
-    g.drawString("Play", playButton.x + 20, playButton.y + 25);
-
-    // If the play button has been clicked, draw the vertical line
-    if (playClicked) {
-      g.setColor(Color.RED);
-      int startX = staff.getX() + 50;
-      int startY = staff.getY() + 10;
-      int endY = staff.getY() + staff.getHeight() - 10;
-      for (int x = startX; x < staff.getX() + staff.getWidth() - 50; x++) {
-        g.drawLine(x, startY, x, endY);
-        try {
-          Thread.sleep(2);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-      }
-      playClicked = false;
+        playButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                playNotes();
+            }
+        });
     }
-  }
+
+    private JButton createButton(String text, Color color) {
+        JButton button = new JButton(text);
+        button.setPreferredSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
+        button.setBackground(color);
+        button.setForeground(Color.WHITE);
+        button.setFocusPainted(false);
+        return button;
+    }
+
+    private void playNotes() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int x = dot.getWidth() / 2;
+                int startY = dot.getStaff().getHeight() / 2 - (Staff.NUM_LINES / 2) * Staff.VERTICAL_SPACING;
+                int endY = startY + (Staff.NUM_LINES - 1) * Staff.VERTICAL_SPACING;
+
+                for (int y = startY; y <= endY; y += Staff.VERTICAL_SPACING) {
+                    Graphics g = dot.getGraphics();
+                    g.setColor(Color.BLUE);
+                    g.drawLine(x, y, x, y + Staff.VERTICAL_SPACING);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+    }
 }
